@@ -1,0 +1,83 @@
+Bilkul! Chaliye, samjhaate hain:
+
+```
+Insertion se pehle:
+head -> [7] -> [45] -> [23] -> [34] -> NULL
+```
+
+Maan lijiye humein naya node daalna hai jiska value `6` hai position `2` par, jo `[45]` aur `[23]` ke beech hai.
+
+1. Sabse pehle, hum list mein ghoomte hain jab tak hum desired position se ek node pehle na pahunch jaayein.
+
+```
+Insertion se pehle:
+head -> [7] -> [45] -> [23] -> [34] -> NULL
+                ^ (position 2)
+```
+
+2. Jab hum desired position (`[45]`) se ek node pehle pahunch jaate hain, tab hum ek naya node `[6]` banate hain.
+
+```
+Insertion se pehle:
+head -> [7] -> [45] -> [23] -> [34] -> NULL
+                       ^ (position 2)
+                       [6]
+```
+
+3. Ab, hum pointers ko adjust karte hain.
+
+Hum naye node `[6]` ka `next` pointer uss node ko point karne ke liye set karte hain jo uske baad aata hai, jo `[23]` hai. Fir, hum desired position se ek node pehle wale node (`[45]`) ka `next` pointer humare naye node `[6]` ko point karne ke liye update karte hain.
+
+```
+Insertion ke baad:
+head -> [7] -> [45] -> [6] -> [23] -> [34] -> NULL
+```
+
+Is tarah, naya node `[6]` safalta purvak position `2` par daala gaya hai.
+
+
+
+
+
+
+
+
+
+
+
+
+Bilkul! Pointer adjustment ko samajhne ke liye, yeh steps follow kiye jaate hain:
+
+1. **Naye Node ka Next Set karna**: Pehle, hum naye node ka `next` pointer set karte hain. Yeh `temp->next` wale node ke `next` pointer ko point karta hai. Iska matlab hai ki humara naya node ab uss node ke baad aayega, jahan humein insert karna hai. Iss line se yeh hota hai:
+
+    ```
+    new_node->next = temp->next;
+    ```
+
+2. **Pichle Node ka Next Update karna**: Fir, hum pichle node ka `next` pointer naye node ko point karne ke liye update karte hain. Iska matlab hai ki ab humara pichla node naye node ko point karega. Iss line se yeh hota hai:
+
+    ```
+    temp->next = new_node;
+    ```
+
+Yeh dono steps ek saath kaam karte hain aur naye node ko list mein sahi jagah par insert karte hain.
+
+Agar aap isse graphical representation mein dekhna chahte hain toh, yeh steps diagram se aise samjha sakte hain:
+
+1. **Naye Node ka Next Set karna**: Hum naye node ka `next` pointer uss node ke `next` pointer ko point karne ke liye set karte hain, jahan humein insert karna hai.
+
+    ```
+    Before:
+    temp -> [next_node] -> ...
+                  |
+                [new_node]
+    ```
+
+2. **Pichle Node ka Next Update karna**: Fir, hum pichle node ka `next` pointer naye node ko point karne ke liye update karte hain.
+
+    ```
+    After:
+    temp -> [new_node] -> [next_node] -> ...
+    ```
+
+Is tarah, hum pointer ko adjust karke naya node sahi jagah par insert kar lete hain.

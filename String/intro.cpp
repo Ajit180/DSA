@@ -76,7 +76,7 @@ char getMaxCharacter(string s){
         arr[number]++;
     }
      
-    //find the maximum occ number
+    //find the maximum occurance number
     int maxi = -1, ans =0;
     for (int i = 0; i < 26; i++)
     {

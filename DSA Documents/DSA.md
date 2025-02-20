@@ -61,7 +61,7 @@ This list is quite comprehensive, and the exact topics covered can vary dependin
 
 
 
-### To build confidence in Data Structures and Algorithms (DSA), it's important to approach it systematically. Here’s a breakdown of how much to practice from each topic, including the number of questions and patterns:
+### **To build confidence in Data Structures and Algorithms (DSA), it's important to approach it systematically. Here’s a breakdown of how much to practice from each topic, including the number of questions and patterns:**
 
 ### 1. **Arrays**
    - **No. of questions**: 30-40
